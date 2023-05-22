@@ -1,0 +1,201 @@
+body {
+    text-align: center;
+    color: white;
+    background-color: rgba(3, 167, 87, 0.916);
+    font-family: "Cormorant Garamond", serif;
+    font-weight: normal;
+    margin: 0;
+  }
+  #guy{
+    display: none;
+    width: 42%;
+  }
+
+
+
+
+  h1 {
+    font-weight: normal;
+    margin: auto;
+  }
+  #heade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  #head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  .formx {
+    border: white 5px solid;
+  }
+  form {
+    margin: 0 auto;
+    display: grid;
+    padding: 75px;
+  }
+  button {
+    background-color:rgba(3, 167, 87, 0.916);
+    padding: 10px;
+    color: white;
+    border: white solid;
+  }
+  input {
+    padding: 5px 40px;
+    margin-bottom: 24px;
+  }
+  #message {
+    padding: 40px;
+  }
+  #ultwo{
+    display: none;
+  }
+  #sec {
+    border: white 5px solid;
+  }
+  #hex {
+    display: none;
+  }
+  #namep {
+    display: none;
+    margin: auto;
+  }
+  @media only screen and (max-width: 700px) {
+    
+    form {
+      padding-top: 10px;
+    }
+    #head{
+        display: block;
+    }
+    #hex {
+      display: block;
+    }
+    h2 {
+      font-weight: normal;
+    }
+    #namep {
+      display: block;
+      margin-bottom: 20px;
+    }
+    #whe {
+     display: none;
+    }
+    #ultwo{
+        display: flex;
+        border-top:2px solid white;
+    }
+    #ulone{
+        display: none;
+    }
+    #sec{
+        display: none;
+    }
+    #guy{
+        display: inline;
+    }
+    #gu{
+        font-size: 1.5em;
+    }
+
+  }
+
+
+  
+  li{
+    list-style: none;
+    
+  }
+  ul{
+    display: flex;
+justify-content: space-evenly;
+border-bottom:2px solid white;
+padding-bottom: 14px;
+padding-top: 6px;
+  }
+a{
+text-decoration: none;
+color: white;
+font-weight: 400;
+}
+
+
+
+
+
+
+#box1{
+    display: flex;
+    border: white solid 2px;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+#box1 p{
+    padding: 14px;
+}
+#intro{
+   
+    width: 70%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 24px;
+    font-size: larger;
+}
+
+@media only screen and (min-width: 700px){
+    #box1{
+        font-size: 2rem;
+    }
+    #pho{
+        width: 25%;
+    }
+    #huu{
+        font-size: 3rem;
+    }
+    #gg{
+        width: 40%;
+    }
+    #st{
+        width: 30%;
+    }
+    .hihi{
+        width: 50%;
+        margin: auto;
+    }
+    #mimi{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

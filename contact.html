@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul id="ulone">
+      <a href="index.html"><li>Home</li></a>
+      <a href="about.html"><li>About us</li></a>
+      <a href="contact.html"><li>Join</li></a>
+    </ul>
+
+    <div id="heade">
+      <img id="guy" src="images/sub.png" alt="" />
+      <h1 id="gu">KAMLAHIYA <br />foundation</h1>
+
+      <img
+        id="whe"
+        class="formx"
+        width="45%"
+        height="100%"
+        src="images/wheelchair.jpg"
+        alt=""
+      />
+    </div>
+    <!-- <img id="hex" style="margin: auto;" width="50%" src="images/sub.png" alt=""> -->
+    <ul id="ultwo">
+      <a href="index.html"><li>Home</li></a>
+      <a href="about.html"><li>About us</li></a>
+      <a href="contact.html"><li>Join</li></a>
+    </ul>
+    <img id="st" width="60%" src="images/stream2.png" alt="" />
+    <br />
+    <span>this form is only meant for physically challenged people </span>
+    <div id="head" class="formx">
+      <h2 id="hex">Fill the form</h2>
+      <img width="100%" id="namep" src="images/nameplate.png" alt="" />
+      <img id="sec" width="45%" src="images/wheel2.jpg" alt="" />
+
+      <form action="" id="FRE">
+        <label for="name">Name</label>
+        <input id="name" type="text" />
+        <label for="Email">Email</label>
+        <input id="Email" type="email" />
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" />
+        <label for="message">How you got injured</label>
+        <textarea id="message" rows="6" cols="50" name="message"> </textarea>
+        <br />
+        <button onclick="writeData()">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getDatabase ,ref,set } from "https://kfound-f59e0-default-rtdb.firebaseio.com/";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAccXfF0JoWw27V9TuP0X2PnJD5Z0AV4VE",
+      authDomain: "kfound-f59e0.firebaseapp.com",
+      databaseURL: "https://kfound-f59e0-default-rtdb.firebaseio.com",
+      projectId: "kfound-f59e0",
+      storageBucket: "kfound-f59e0.appspot.com",
+      messagingSenderId: "3051349885",
+      appId: "1:3051349885:web:c0e3b7d237e0cac8af4e14",
+      databaseURL: "https://kfound-f59e0-default-rtdb.firebaseio.com/",
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    function writeUserData() {
+  const db = getDatabase();
+  set(ref(db, 'users/' + userId), {
+    username: document.getElementById("name").value,
+   
+  });
+}
+
+  </script>
+</html>
