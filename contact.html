@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,11 +14,18 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <ul id="ulone">
-      <a href="index.html"><li>Home</li></a>
-      <a href="about.html"><li>About us</li></a>
-      <a href="contact.html"><li>Join</li></a>
+      <a href="index.html">
+        <li>Home</li>
+      </a>
+      <a href="about.html">
+        <li>About us</li>
+      </a>
+      <a href="contact.html">
+        <li>Join</li>
+      </a>
     </ul>
 
     <div id="heade">
@@ -35,9 +43,15 @@
     </div>
     <!-- <img id="hex" style="margin: auto;" width="50%" src="images/sub.png" alt=""> -->
     <ul id="ultwo">
-      <a href="index.html"><li>Home</li></a>
-      <a href="about.html"><li>About us</li></a>
-      <a href="contact.html"><li>Join</li></a>
+      <a href="index.html">
+        <li>Home</li>
+      </a>
+      <a href="about.html">
+        <li>About us</li>
+      </a>
+      <a href="contact.html">
+        <li>Join</li>
+      </a>
     </ul>
     <img id="st" width="60%" src="images/stream2.png" alt="" />
     <br />
@@ -49,48 +63,51 @@
 
       <form action="" id="FRE">
         <label for="name">Name</label>
-        <input id="name" type="text" />
+        <input required  id="name" type="text" />
         <label for="Email">Email</label>
-        <input id="Email" type="email" />
+        <input required  id="Email" type="email" />
         <label for="phone">Phone</label>
-        <input id="phone" type="tel" />
+        <input  required id="phone" type="tel" />
         <label for="message">How you got injured</label>
-        <textarea id="message" rows="6" cols="50" name="message"> </textarea>
+        <textarea required id="message" rows="6" cols="50" name="message"> </textarea>
         <br />
-        <button onclick="writeData()">Submit</button>
+        <button id="momo"> Submit</button>
       </form>
     </div>
-  </body>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getDatabase ,ref,set } from "https://kfound-f59e0-default-rtdb.firebaseio.com/";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyAccXfF0JoWw27V9TuP0X2PnJD5Z0AV4VE",
-      authDomain: "kfound-f59e0.firebaseapp.com",
-      databaseURL: "https://kfound-f59e0-default-rtdb.firebaseio.com",
-      projectId: "kfound-f59e0",
-      storageBucket: "kfound-f59e0.appspot.com",
-      messagingSenderId: "3051349885",
-      appId: "1:3051349885:web:c0e3b7d237e0cac8af4e14",
-      databaseURL: "https://kfound-f59e0-default-rtdb.firebaseio.com/",
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);
-
-    function writeUserData() {
-  const db = getDatabase();
-  set(ref(db, 'users/' + userId), {
-    username: document.getElementById("name").value,
-   
-  });
-}
-
-  </script>
-</html>
+    </body>
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyAccXfF0JoWw27V9TuP0X2PnJD5Z0AV4VE",
+        authDomain: "kfound-f59e0.firebaseapp.com",
+        databaseURL: "https://kfound-f59e0-default-rtdb.firebaseio.com",
+        projectId: "kfound-f59e0",
+        storageBucket: "kfound-f59e0.appspot.com",
+        messagingSenderId: "3051349885",
+        appId: "1:3051349885:web:c0e3b7d237e0cac8af4e14",
+      };
+    
+      const app = initializeApp(firebaseConfig);
+    
+      function writeUserData() {
+        const db = getDatabase();
+        set(ref(db, "users/" + document.getElementById("name").value), {
+          Username: document.getElementById("name").value,
+          Email: document.getElementById("Email").value,
+          Contact: document.getElementById("phone").value,
+          Story: document.getElementById("message").value,
+        });
+        alert("Form submitted successfully")
+        document.getElementById("FRE").reset();
+      }
+    
+      document.getElementById("FRE").addEventListener("submit", function(event) {
+        event.preventDefault();
+        writeUserData();
+        
+      });
+    </script>
+    </html>
