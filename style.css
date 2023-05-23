@@ -10,12 +10,7 @@ body {
     display: none;
     width: 42%;
   }
-#jojo{
-text-align:left;
-width: 70%;
-display:block;
-margin: auto;
-}
+
 
 
 
@@ -48,7 +43,16 @@ margin: auto;
     padding: 10px;
     color: white;
     border: white solid;
+    cursor: pointer;
   }
+  button:active {
+    background-color:rgba(42, 122, 202, 0.916) ;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
+
   input {
     padding: 5px 40px;
     margin-bottom: 24px;
